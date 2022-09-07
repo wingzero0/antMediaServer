@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: wingzzz2003/antMediaServer:beta
+  IMAGE_NAME: wingzzz2003/antmediaserver:beta
 
 jobs:
   build:
