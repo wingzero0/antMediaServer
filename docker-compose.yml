@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ant:
+    image: wingzzz2003/antmediaserver:beta
+    ports:
+      - 1935:1935
+      - 5080:5080
+      - 5443:5443
+      - 5554:5554
+
+  nginx:
+    image: nginx
+    volumes:
+      - ${PWD}/nginx:/usr/share/nginx/html
+    ports:
+      - 80:80
