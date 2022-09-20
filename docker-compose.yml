@@ -8,6 +8,11 @@ services:
       - 5080:5080
       - 5443:5443
       - 5554:5554
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
 
   nginx:
     image: nginx
