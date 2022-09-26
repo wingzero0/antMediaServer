@@ -22,3 +22,9 @@ upload mp4 to nginx folder, then you can access them from ant media server by ur
 
 ### stream source
 support m3u8 (youtube, twitch), not mpd (facebook)
+
+## ffmpeg
+restream file or m3u8 to rtmp endpoint. add "-vf" and "-codec:v" if you need overlay text.
+```bash
+ffmpeg -re -i <INPUT_FILE_OR_M3U8> -vf "drawtext=fontfile=/usr/share/fonts/truetype/freefont/FreeSans.ttf:textfile=text.txt:reload=1:fontsize=22:fontcolor=white" -codec:v libx264 -codec:a copy -f flv rtmp://ant/LiveApp/<STREAM_KEY>
+```

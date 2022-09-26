@@ -17,6 +17,14 @@ services:
   nginx:
     image: nginx
     volumes:
-      - ${PWD}/nginx:/usr/share/nginx/html
+      - ${PWD}/nginx/:/usr/share/nginx/html/
     ports:
       - 80:80
+
+  ffmpeg:
+    image: jrottenberg/ffmpeg:4.4-ubuntu
+    volumes:
+      - ${PWD}/nginx/:/opt/videos/
+    stdin_open: true
+    tty: true
+    entrypoint: ["/bin/bash"]
